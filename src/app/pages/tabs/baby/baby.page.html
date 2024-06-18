@@ -1,0 +1,382 @@
+<body>
+  <div class="loader" *ngIf="isLoading">
+    <svg class="pl" viewBox="0 0 64 64" width="64px" height="64px" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#000" />
+          <stop offset="100%" stop-color="#fff" />
+        </linearGradient>
+        <mask id="grad-mask">
+          <rect x="0" y="0" width="64" height="64" fill="url(#grad)" />
+        </mask>
+      </defs>
+      <circle class="pl__ring" cx="32" cy="32" r="26" fill="none" stroke="hsl(223,90%,55%)" stroke-width="12"
+        stroke-dasharray="169.65 169.65" stroke-dashoffset="-127.24" stroke-linecap="round" transform="rotate(135)" />
+      <g fill="hsl(223,90%,55%)">
+        <circle class="pl__ball1" cx="32" cy="45" r="6" transform="rotate(14)" />
+        <circle class="pl__ball2" cx="32" cy="48" r="3" transform="rotate(-21)" />
+      </g>
+      <g mask="url(#grad-mask)">
+        <circle class="pl__ring" cx="32" cy="32" r="26" fill="none" stroke="hsl(283,90%,55%)" stroke-width="12"
+          stroke-dasharray="169.65 169.65" stroke-dashoffset="-127.24" stroke-linecap="round" transform="rotate(135)" />
+        <g fill="hsl(283,90%,55%)">
+          <circle class="pl__ball1" cx="32" cy="45" r="6" transform="rotate(14)" />
+          <circle class="pl__ball2" cx="32" cy="48" r="3" transform="rotate(-21)" />
+        </g>
+      </g>
+    </svg>
+  </div>
+  <ion-header [translucent]="true" class="ion-no-border">
+    <ion-toolbar class="center-tool">
+      <ion-title>Smart Tanks</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content [fullscreen]="true" [class.blurred]="isLoading">
+    <div class="container">
+      <!-- <h1 class="title" style="--duration: 1s">
+        <span style="--delay: 0.1s"><strong class="you">Online status</strong></span>
+      </h1> -->
+    </div>
+    <section class="projects section" id="projects">
+      <div class="projects__container container grid">
+        <article class="projects__card">
+          <h2 class="projects__title">Slave Water tank 1</h2>
+          <a class="projects__link">
+            <ion-icon size="large" name="bulb" class="bulb-icon blinking-icon green-bulb"></ion-icon>
+          </a>
+          <div class="projects__image">
+            <img src="../../assets/images/water-tank-top-1.jpg" alt="image" class="projects__img" />
+          </div>
+          <div class="projects__content">
+            <h3 class="projects__subtitle" style="color: black">
+              <!-- <ion-badge color="tertiary">80%</ion-badge> -->
+
+            </h3>
+            <div class="progress-container">
+              <ion-progress-bar color="medium" class="" [value]="0.5"></ion-progress-bar>
+              <div class="progress-label">50%</div>
+            </div>
+
+            <ion-list [inset]="true">
+              <ion-item>
+                <ion-label slot="start">Tank Volume</ion-label>
+                  <ion-chip slot="end" style="font-weight: 600;" color="tertiary">2000L</ion-chip>
+              </ion-item>
+              <ion-item>
+                <ion-label slot="start">Current Water</ion-label>
+                  <ion-chip slot="end" style="font-weight: 600;" color="tertiary">1200L</ion-chip>
+              </ion-item>
+            </ion-list>
+
+            <ion-grid>
+              <ion-row>
+
+                <ion-item>
+                  <ion-icon aria-hidden="true" name="person" slot="start"></ion-icon>
+                  <ion-input  label="Input person count"
+                  labelPlacement="floating" value="2" placeholder="Person count"></ion-input>
+                </ion-item>
+
+                <ion-col offset="3">
+                  <ion-item>
+                    <ion-button size="small" color="secondary">Check Vailability</ion-button>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-chip color="success">Water available for 2 persons for 10 days</ion-chip>
+                <!-- <ion-chip color="warning">Availabe 2 persons for 2 Day</ion-chip> -->
+                <!-- <ion-chip color="danger">Availabe 2 persons for 1 Day</ion-chip> -->
+              </ion-row>
+            </ion-grid>
+
+
+
+
+
+
+
+          </div>
+          <div class="projects__buttons">
+
+          </div>
+          <!-- <div class="col-sm-12 col-md-6">
+            <a class="dedcription-btn" id="open-modal-1">
+              <span class="name-descripeion">Turn Power ON</span>
+              <div class="btn-icon action-icon">
+                <i class="fas fa-power-off"></i>
+              </div>
+            </a>
+          </div> -->
+        </article>
+
+        <article class="projects__card">
+          <h2 class="projects__title">Master Water Tank</h2>
+          <a class="projects__link">
+            <ion-icon size="large" name="bulb" class="bulb-icon red-bulb"></ion-icon>
+          </a>
+          <div class="projects__image">
+            <img src="../../assets/images/water-tank-master.jpg" alt="image" class="projects__img" />
+          </div>
+          <div class="projects__content">
+            <h3 class="projects__subtitle" style="color: black">
+              <!-- <ion-badge color="tertiary">80%</ion-badge> -->
+
+            </h3>
+            <ion-progress-bar color="medium" class="horizontal-progress-bar" [value]="0.5"></ion-progress-bar>
+            <ion-badge slot="center">55%</ion-badge>
+
+            <p class="projects__description">
+              Water tank located on ground
+            </p>
+          </div>
+          <div class="projects__buttons">
+
+
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <a class="dedcription-btn" id="open-modal-2">
+              <span class="name-descripeion">Turn Power ON</span>
+              <div class="btn-icon action-icon">
+                <i class="fas fa-power-off"></i>
+              </div>
+            </a>
+          </div>
+        </article>
+        <div class="hide" style="visibility: hidden; margin-bottom: 10rem"></div>
+      </div>
+    </section>
+  </ion-content>
+</body>
+
+<!-- modal -->
+<ion-modal #modal trigger="open-modal-3">
+  <ng-template>
+    <ion-header class="ion-no-border">
+      <ion-toolbar>
+        <ion-title>Detail bayi </ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="onClickBack()" [strong]="true">Kembali</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content [fullscreen]="true">
+      <ion-card>
+        <img alt="image" src="../../assets/images/detail-bayi-3.jpeg" style="height: 230px; width: 100%" />
+        <ion-card-header>
+          <ion-card-title>Sosialiasi dan Kemandirian</ion-card-title>
+          <ion-card-subtitle>0 - 3 bulan</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          Bayi mampu melihat wajah orang dan bayi mampu merespon tersenyum.
+        </ion-card-content>
+        <ion-card-header>
+          <ion-card-title>Bicara dan Bahasa</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Bayi mampu mengeluarkan ocehan serta bayi tertawa saat digelitiki
+        </ion-card-content>
+      </ion-card>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+
+<ion-modal #modal trigger="open-modal-6">
+  <ng-template>
+    <ion-header class="ion-no-border">
+      <ion-toolbar>
+        <ion-title>Detail bayi </ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="onClickBack()" [strong]="true">Kembali</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content [fullscreen]="true">
+      <ion-card>
+        <img alt="image" src="../../assets/images/details-6.jpeg" style="height: 230px; width: 100%" />
+        <ion-card-header>
+          <ion-card-title>Sosialiasi dan Kemandirian</ion-card-title>
+          <ion-card-subtitle>4 - 6 bulan</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          Bayi tersenyum ketika melihat mainan yang lucu, gambar atau Binatang
+          peliharaan saat bayi bermain sendiri
+        </ion-card-content>
+        <ion-card-header>
+          <ion-card-title>Bicara dan Bahasa</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Bayi mampu mengeluarkan suara gembira bernada tinggi atau memekik
+          tetapi bukan menangis
+        </ion-card-content>
+      </ion-card>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+
+<ion-modal #modal trigger="open-modal-9">
+  <ng-template>
+    <ion-header class="ion-no-border">
+      <ion-toolbar>
+        <ion-title>Detail bayi </ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="onClickBack()" [strong]="true">Kembali</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content [fullscreen]="true">
+      <ion-card>
+        <img alt="image" src="../../assets/images/6.jpeg" style="height: 230px; width: 100%" />
+        <ion-card-header>
+          <ion-card-title>Sosialiasi dan Kemandirian</ion-card-title>
+          <ion-card-subtitle>6 - 9 bulan</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          Bayi mampu mencari mainan atau benda yang dijatuhkan, bermain tepuk
+          tangan atau ciluk ba, serta mampu memakan makanan sendiri.
+        </ion-card-content>
+        <ion-card-header>
+          <ion-card-title>Bicara dan Bahasa</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Bayi mampu bersuara tanpa arti, seperti mamama, bababa, dadada,
+          tatata, papapa
+        </ion-card-content>
+      </ion-card>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+
+<ion-modal #modal trigger="open-modal-12">
+  <ng-template>
+    <ion-header class="ion-no-border">
+      <ion-toolbar>
+        <ion-title>Detail bayi </ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="onClickBack()" [strong]="true">Kembali</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content [fullscreen]="true">
+      <ion-card>
+        <img alt="image" src="../../assets/images/detail-bayi-12.jpeg" style="height: 230px; width: 100%" />
+        <ion-card-header>
+          <ion-card-title>Sosialiasi dan Kemandirian</ion-card-title>
+          <ion-card-subtitle>9 - 12 bulan</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          Tangan bayi berusaha meraih benda yang dilihat, sementara bayi mungkin
+          merasa ketakutan terhadap orang yang belum dikenal.
+        </ion-card-content>
+        <ion-card-header>
+          <ion-card-title>Bicara dan Bahasa</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Bayi mampu menirukan suara yang didengar, menyebut kata-kata kecil,
+          dan mengeskpresikan sesuatu ketika mendengar suara yang didengarnya.
+        </ion-card-content>
+      </ion-card>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+
+<ion-modal #modal trigger="open-modal-18">
+  <ng-template>
+    <ion-header class="ion-no-border">
+      <ion-toolbar>
+        <ion-title>Detail bayi </ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="onClickBack()" [strong]="true">Kembali</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content [fullscreen]="true">
+      <ion-card>
+        <img alt="image" src="../../assets/images/detail-bayi-18.jpeg" style="height: 230px; width: 100%" />
+        <ion-card-header>
+          <ion-card-title>Sosialiasi dan Kemandirian</ion-card-title>
+          <ion-card-subtitle>12 - 18 bulan</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          Bayi mampu menunjukkan apa yang diinginkannya tanpa menangis atau
+          merengek, mengeluarkan suara yang menyenangkan, dan menarik tangan
+          ibu.
+        </ion-card-content>
+        <ion-card-header>
+          <ion-card-title>Bicara dan Bahasa</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Bayi mampu memanggil ayah dengan kata “papa”, memanggi ibu dengan kata
+          “mama”
+        </ion-card-content>
+      </ion-card>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+
+<ion-modal #modal trigger="open-modal-24">
+  <ng-template>
+    <ion-header class="ion-no-border">
+      <ion-toolbar>
+        <ion-title>Detail bayi </ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="onClickBack()" [strong]="true">Kembali</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content [fullscreen]="true">
+      <ion-card>
+        <img alt="image" src="../../assets/images/detail-bayi-24.jpeg" style="height: 230px; width: 100%" />
+        <ion-card-header>
+          <ion-card-title>Sosialiasi dan Kemandirian</ion-card-title>
+          <ion-card-subtitle>18 - 24 bulan</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          Bayi mampu memegang sendok atau cangkir sendiri untuk belajar makan
+          dan minum, bertepuk tangan, melambai-lambaikan tangan, menirukan
+          pekerjaan rumah tangga, dan mengetahui jenis kelaminnya sendiri.
+        </ion-card-content>
+        <ion-card-header>
+          <ion-card-title>Bicara dan Bahasa</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Bayi mampu menyebut 3-6 kata yang mempunyai arti
+        </ion-card-content>
+      </ion-card>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+
+<ion-modal #modal trigger="open-modal-36">
+  <ng-template>
+    <ion-header class="ion-no-border">
+      <ion-toolbar>
+        <ion-title>Detail bayi </ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="onClickBack()" [strong]="true">Kembali</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content [fullscreen]="true">
+      <ion-card>
+        <img alt="image" src="../../assets/images/30.jpeg" style="height: 230px; width: 100%" />
+        <ion-card-header>
+          <ion-card-title>Sosialiasi dan Kemandirian</ion-card-title>
+          <ion-card-subtitle>24 - 36 bulan</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          Bayi mampu makan nasi sendiri tanpa banyak yang tercecer serta bayi mampu melepas pakaiannya sendiri
+        </ion-card-content>
+        <ion-card-header>
+          <ion-card-title>Bicara dan Bahasa</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Bayi mulai mampu berbicara dengan baik menggunakan dua kata, menunjuk satu atau lebih bagian tubuhnya ketika
+          ditanya, melihat gambar dan dapat menyebut dengan benar nama dua benda atau lebih, serta membantu membereskan
+          mainannya sendiri.
+        </ion-card-content>
+      </ion-card>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+<!-- modal -->

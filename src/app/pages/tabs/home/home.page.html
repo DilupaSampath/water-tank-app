@@ -1,0 +1,180 @@
+<body>
+  <div class="loader" *ngIf="isLoading">
+    <svg
+      class="pl"
+      viewBox="0 0 64 64"
+      width="64px"
+      height="64px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#000" />
+          <stop offset="100%" stop-color="#fff" />
+        </linearGradient>
+        <mask id="grad-mask">
+          <rect x="0" y="0" width="64" height="64" fill="url(#grad)" />
+        </mask>
+      </defs>
+      <circle
+        class="pl__ring"
+        cx="32"
+        cy="32"
+        r="26"
+        fill="none"
+        stroke="hsl(223,90%,55%)"
+        stroke-width="12"
+        stroke-dasharray="169.65 169.65"
+        stroke-dashoffset="-127.24"
+        stroke-linecap="round"
+        transform="rotate(135)"
+      />
+      <g fill="hsl(223,90%,55%)">
+        <circle
+          class="pl__ball1"
+          cx="32"
+          cy="45"
+          r="6"
+          transform="rotate(14)"
+        />
+        <circle
+          class="pl__ball2"
+          cx="32"
+          cy="48"
+          r="3"
+          transform="rotate(-21)"
+        />
+      </g>
+      <g mask="url(#grad-mask)">
+        <circle
+          class="pl__ring"
+          cx="32"
+          cy="32"
+          r="26"
+          fill="none"
+          stroke="hsl(283,90%,55%)"
+          stroke-width="12"
+          stroke-dasharray="169.65 169.65"
+          stroke-dashoffset="-127.24"
+          stroke-linecap="round"
+          transform="rotate(135)"
+        />
+        <g fill="hsl(283,90%,55%)">
+          <circle
+            class="pl__ball1"
+            cx="32"
+            cy="45"
+            r="6"
+            transform="rotate(14)"
+          />
+          <circle
+            class="pl__ball2"
+            cx="32"
+            cy="48"
+            r="3"
+            transform="rotate(-21)"
+          />
+        </g>
+      </g>
+    </svg>
+  </div>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- content -->
+  <ion-content [class.blurred]="isLoading" fullscreen>
+    <div class="container">
+      <section>
+        <h1>Welcome to Infant Growth Guide</h1>
+        <p>Track and Support Your Child's Development from Birth to 36 Months</p>
+      </section>
+      <section>
+        <h2>Key Areas of Development</h2>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Motor Skills</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ul>
+              <li><strong>0-3 Months:</strong> Moves head, responds to smiling faces</li>
+              <li><strong>4-6 Months:</strong> Grasps objects, smiles at amusing stimuli</li>
+              <li><strong>6-9 Months:</strong> Picks up objects with both hands, may begin to crawl</li>
+              <li><strong>9-12 Months:</strong> Stands with support</li>
+              <li><strong>18-24 Months:</strong> Stacks blocks, starts showing independence</li>
+              <li><strong>24-36 Months:</strong> Scribbles with a pencil, climbs stairs</li>
+            </ul>
+          </ion-card-content>
+        </ion-card>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Socialization & Independence</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ul>
+              <li><strong>0-3 Months:</strong> Responds to smiling faces</li>
+              <li><strong>4-6 Months:</strong> Smiles at amusing stimuli</li>
+              <li><strong>18-24 Months:</strong> Calls out "mama" or "papa", shows signs of independence</li>
+              <li><strong>24-36 Months:</strong> Helps tidy up toys</li>
+            </ul>
+          </ion-card-content>
+        </ion-card>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Speech & Language Abilities</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ul>
+              <li><strong>0-3 Months:</strong> Responds to sounds</li>
+              <li><strong>9-12 Months:</strong> Makes sounds without meaning</li>
+              <li><strong>18-24 Months:</strong> Starts forming simple words like "mama"</li>
+              <li><strong>24-36 Months:</strong> Points to body parts, engages in more complex language tasks</li>
+            </ul>
+          </ion-card-content>
+        </ion-card>
+      </section>
+      <section>
+        <h2>Why Track Developmental Milestones?</h2>
+        <ul>
+          <li><strong>Monitor Growth:</strong> Ensure your child is progressing as expected.</li>
+          <li><strong>Early Interventions:</strong> Identify and address developmental delays early.</li>
+          <li><strong>Support & Guidance:</strong> Provide the right activities to nurture your child's growth.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Resources for Parents & Caregivers</h2>
+        <ul>
+          <li>Developmental Milestone Checklists</li>
+          <li>Activities to Support Growth</li>
+          <li>Expert Tips and Advice</li>
+          <li>Community Support Groups</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Stay Connected</h2>
+        <p><strong>Subscribe to Our Newsletter</strong></p>
+        <p>Get the latest updates on child development. Access exclusive resources and expert tips.</p>
+        <form>
+          <ion-item>
+            <ion-label position="floating">Enter your email</ion-label>
+            <ion-input type="email" required></ion-input>
+          </ion-item>
+          <ion-button (click)="addItem()" expand="block">Subscribe</ion-button>
+        </form>
+        <p><strong>Follow Us on Social Media</strong></p>
+      </section>
+    </div>
+
+    <ion-footer>
+      <ion-toolbar>
+        <p>Contact Us</p>
+        <p>Email: support@infantgrowthguide.com | Phone: 123-456-7890 | Address: 123 Child Development Ave, Care City, ABC 12345</p>
+        <p>© 2024 Infant Growth Guide. All rights reserved.</p>
+      </ion-toolbar>
+    </ion-footer>
+  </ion-content>
+  <!-- content -->
+
+</body>
